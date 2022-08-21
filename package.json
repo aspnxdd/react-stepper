@@ -1,7 +1,22 @@
 {
   "name": "@aspnxdd/react-stepper",
   "private": false,
-  "version": "0.0.31",
+  "version": "0.0.41",
+  "keywords": [
+    "typescript",
+    "react",
+    "stepper",
+    "react-stepper",
+    "react-component"
+  ],
+  "homepage": "https://arnau-portfolio.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aspnxdd/react-stepper"
+  },
+  "bugs": {
+    "url": "https://github.com/aspnxdd/react-stepper/issues"
+  },
   "description": "🧩 React custom stepper component",
   "author": "Arnau Espin <arnauespin@gmail.com>",
   "license": "MIT",

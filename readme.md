@@ -2,11 +2,16 @@
 
 Basic react stepper component:
 
+![image](https://user-images.githubusercontent.com/43625217/185811038-4e479d4e-5836-4ea9-93d7-aab02526ea79.png)
+
+
+
 ### Install:
 
 ```sh
 $ npm i @aspnxdd/react-stepper
 ```
+[Npm link](https://www.npmjs.com/package/@aspnxdd/react-stepper)
 
 ### Example:
 
