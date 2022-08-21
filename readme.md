@@ -2,6 +2,12 @@
 
 Basic react stepper component:
 
+### Install:
+
+```sh
+$ npm i @aspnxdd/react-stepper
+```
+
 ### Example:
 
 ```ts
