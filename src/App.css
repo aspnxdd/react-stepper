@@ -1,0 +1,36 @@
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.fadein-line {
+  transform-origin: left;
+  animation: fadeInDown 1s normal;
+}
+
+.fadein-ball {
+  opacity: 0;
+  animation: fadeInDown2 1s forwards;
+  animation-delay: 300ms;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fadeInDown2 {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
