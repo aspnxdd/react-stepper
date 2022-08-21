@@ -1,7 +1,7 @@
-import * as React from "react";
+import { FC } from "react";
 import { Options, Props } from "./types.js";
 
-const Node: React.FC<Options & Props> = ({
+const Node: FC<Options & Props> = ({
   id,
   text,
   status,
@@ -53,7 +53,7 @@ const Node: React.FC<Options & Props> = ({
   );
 };
 
-const Line: React.FC<Options> = ({ color, squared, noAnimation }) => {
+const Line: FC<Options> = ({ color, squared, noAnimation }) => {
   return (
     <div
       className={noAnimation ? "" : "fadein-line"}
@@ -70,8 +70,8 @@ const Line: React.FC<Options> = ({ color, squared, noAnimation }) => {
   );
 };
 
-export const Stepper: React.FC<{ arr: Props[]; options?: Options }> = ({
-  arr,
+export const Stepper: FC<{ steps: Props[]; options?: Options }> = ({
+  steps,
   options,
 }) => {
   return (
@@ -83,28 +83,27 @@ export const Stepper: React.FC<{ arr: Props[]; options?: Options }> = ({
         marginTop: "10rem",
       }}
     >
-      {arr.map((e, i, o) => {
-        const prevCompleted = i == 0 ? true : o[i - 1]?.status === "completed";
-        const ee = { ...e };
-        ee.status = prevCompleted ? ee.status : undefined;
+      {steps.map((step, i) => {
+        const prevCompleted =
+          i == 0 ? true : steps[i - 1]?.status === "completed";
+        const _step = { ...step };
+        _step.status = prevCompleted ? _step.status : undefined;
 
         return (
-          <React.Fragment>
-            {i + 1 !== o.length ? (
-              <React.Fragment>
-                <Node {...ee} {...options} />
-                <Line {...ee} {...options} />
-              </React.Fragment>
+          <>
+            {i + 1 !== steps.length ? (
+              <>
+                <Node {..._step} {...options} />
+                <Line {...options} />
+              </>
             ) : (
-              <React.Fragment>
-                <Node {...ee} {...options} />
-              </React.Fragment>
+              <>
+                <Node {..._step} {...options} />
+              </>
             )}
-          </React.Fragment>
+          </>
         );
       })}
     </div>
   );
 };
-
-

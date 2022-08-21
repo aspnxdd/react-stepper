@@ -54,7 +54,7 @@ export default function App() {
       <button onClick={increaseEmpty}>inc empty</button>
       <button onClick={finishLoading}>finish loading</button>
       <button onClick={() => setSteps([])}>reset</button>
-      <Stepper arr={steps} options={options} />
+      <Stepper steps={steps} options={options} />
     </div>
   );
 }
