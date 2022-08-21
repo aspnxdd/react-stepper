@@ -33,6 +33,8 @@ const Node: FC<Options & Props> = ({
           top: "10px",
           left: `${text.length ?? 0}`,
           color: "black",
+          width: "6rem",
+          fontSize: "0.8rem",
         }}
       >
         {text}
@@ -53,14 +55,14 @@ const Node: FC<Options & Props> = ({
   );
 };
 
-const Line: FC<Options> = ({ color, squared, noAnimation }) => {
+const Line: FC<Options> = ({ color, squared, noAnimation, distance }) => {
   return (
     <div
       className={noAnimation ? "" : "fadein-line"}
       style={{
         backgroundColor: color ?? "green",
         borderRadius: squared ? "0px" : "999px",
-        width: "100px",
+        width: `${distance ?? 9}rem`,
         height: "1px",
         marginLeft: "-2px",
         marginRight: "-2px",
@@ -97,9 +99,7 @@ export const Stepper: FC<{ steps: Props[]; options?: Options }> = ({
                 <Line {...options} />
               </>
             ) : (
-              <>
-                <Node {..._step} {...options} />
-              </>
+              <Node {..._step} {...options} />
             )}
           </>
         );

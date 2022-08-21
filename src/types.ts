@@ -9,5 +9,6 @@ export interface Props {
 export interface Options {
   squared?: boolean;
   color?: string;
+  distance?: number;
   noAnimation?: boolean;
 }
