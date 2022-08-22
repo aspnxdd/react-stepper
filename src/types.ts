@@ -11,4 +11,7 @@ export interface Options {
   color?: string;
   distance?: number;
   noAnimation?: boolean;
+  displayTickOnCompletedNodes?:boolean;
+  textColor?:string;
+  loadingImage?:string;
 }

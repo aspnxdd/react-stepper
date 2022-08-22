@@ -5,9 +5,11 @@ import { Props, Options } from "./types.js";
 
 const options: Options = {
   squared: false,
-  color: "blue",
+  color: "#106afa",
   noAnimation: false,
   distance: 9,
+  displayTickOnCompletedNodes: false,
+  textColor: "white",
 };
 
 async function sleep(ms: number) {
@@ -89,10 +91,6 @@ export default function App() {
 
   return (
     <div>
-      <button onClick={increaseCompleted}>inc completed</button>
-      <button onClick={increaseLoading}>inc loading</button>
-      <button onClick={increaseEmpty}>inc empty</button>
-      <button onClick={finishLoading}>finish loading</button>
       <button onClick={() => setSteps([])}>reset</button>
       <button onClick={simulation}>simulate</button>
       <Stepper steps={steps} options={options} />

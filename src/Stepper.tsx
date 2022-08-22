@@ -8,6 +8,9 @@ const Node: FC<Options & Props> = ({
   color,
   squared,
   noAnimation,
+  displayTickOnCompletedNodes,
+  textColor,
+  loadingImage,
 }) => {
   return (
     <div
@@ -21,18 +24,18 @@ const Node: FC<Options & Props> = ({
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        color: "black",
+        color: textColor ?? "black",
         position: "relative",
         border: `2px solid  ${color ?? "green"}`,
       }}
     >
-      {status === "completed" ? "✅" : id}
+      {status === "completed" ? (displayTickOnCompletedNodes ? "✅" : id) : id}
       <p
         style={{
           position: "absolute",
-          top: "10px",
+          top: "1.2rem",
           left: `${text.length ?? 0}`,
-          color: "black",
+          color: textColor ?? "black",
           width: "6rem",
           fontSize: "0.8rem",
         }}
@@ -40,16 +43,16 @@ const Node: FC<Options & Props> = ({
         {text}
       </p>
       {status === "loading" && (
-        <p
+        <img
           style={{
             position: "absolute",
-            top: "20px",
+            top: "3.5rem",
             left: `${text.length}`,
             color: "black",
           }}
-        >
-          ...
-        </p>
+          src={loadingImage ?? "/loader.svg"}
+          height="12"
+        />
       )}
     </div>
   );
