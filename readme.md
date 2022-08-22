@@ -4,7 +4,7 @@ Basic react stepper component:
 
 ![image](https://user-images.githubusercontent.com/43625217/185811038-4e479d4e-5836-4ea9-93d7-aab02526ea79.png)
 
-
+[Demo!](https://react-stepper.vercel.app/)
 
 ### Install:
 
